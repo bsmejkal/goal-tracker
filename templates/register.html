@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Register User{% endblock %}
+
+{% block content %}
+
+<div class="container">
+	<div class="col-md-8">
+
+		<form action="/api/register" method="post" id="registerForm">
+			<div class="form-group row">
+				<h2 class="text-center">Register</h2>
+			</div>
+
+			<div class="form-group row">
+				<label>Email</label>
+				<input type="email" class="form-control" name="email" id="emailData" placeholder="email" required>
+			</div>
+
+			<div class="form-group row">
+				<label>First Name</label>
+				<input type="text" class="form-control" name="first_name" id="fNameData" placeholder="first name">
+			</div>
+
+			<div class="form-group row">
+				<label>Last Name</label>
+				<input type="text" class="form-control" name="last_name" id="lNameData" placeholder="last name">
+			</div>
+
+			<div class="form-group row">
+				<label>Username</label>
+				<input type="text" class="form-control" name="username" id="usernameData" placeholder="username" required>
+			</div>
+
+			<div class="form-group row">
+				<label>Password</label>
+				<input type="password" class="form-control" name="password" id="passwordData" placeholder="new password" required>
+			</div>
+
+			<div class="form-group row">
+				<label>Confirm Password</label>
+				<input type="password" class="form-control" name="passwordConfirm" placeholder="confirm password" required>
+			</div>
+
+			<div class="form-group row">
+				<button type="submit" class="btn btn-outline-secondary">Submit</button>
+			</div>
+		</form>
+
+	</div>
+</div>
+{% endblock %}

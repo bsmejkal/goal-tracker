@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="{{ url_for('index') }}">Goal Tracker</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('index') }}">Home 
+        	<span class="sr-only">(current)</span></a>
+      </li>
+      <!-- if user not in session display login & register -->
+      {% if not session.get('user_id') %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login_form') }}">Login
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('register_user') }}">Register
+          </a>
+        </li>
+      <!-- display profile link if user in session -->
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('login') }}">Profile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+
+</nav>
